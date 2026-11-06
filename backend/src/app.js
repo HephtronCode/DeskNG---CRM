@@ -5,6 +5,9 @@ import { env } from "./config/env.js";
 import { sendSuccess } from "./utils/apiResponse.js";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import authRoutes from "./routes/authRoutes.js";
+import categoryRoutes from "./routes/categoryRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
+import ticketRoutes from "./routes/ticketRoutes.js";
 
 const app = express();
 
@@ -33,6 +36,9 @@ app.get("/api/health", (req, res) => {
 
 // API Routes
 app.use("/api/auth", authRoutes);
+app.use("/api/categories", categoryRoutes);
+app.use("/api/users", userRoutes);
+app.use("/api/tickets", ticketRoutes);
 
 // Fallback and Global Error Boundary
 app.use(notFound);

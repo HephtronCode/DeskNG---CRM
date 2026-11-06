@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-paper text-ink-900 antialiased;
+  }
+
+  /* Signature focus ring across the product */
+  *:focus-visible {
+    outline: 2px solid theme("colors.acid.400");
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: theme("colors.acid.400");
+    color: theme("colors.ink.950");
+  }
+}
+
+@layer components {
+  /* Tabular numerals keep ticket numbers and SLA timers
+     from jittering as their values change. */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .card {
+    @apply rounded-2xl border border-ink-100 bg-white shadow-card;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl
+      bg-ink-900 px-4 py-2.5 text-sm font-semibold text-white
+      transition hover:bg-ink-800 disabled:opacity-60;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl
+      bg-acid-400 px-4 py-2.5 text-sm font-bold text-ink-950
+      transition hover:bg-acid-300 disabled:opacity-60;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl
+      border border-ink-200 bg-white px-4 py-2.5 text-sm
+      font-semibold text-ink-800 transition hover:bg-ink-50;
+  }
+
+  .input-field {
+    @apply w-full rounded-xl border border-ink-200 bg-white px-3.5
+      py-2 text-sm text-ink-900 placeholder:text-ink-300
+      focus:border-ink-500 focus:outline-none;
+  }
+
+  .label-field {
+    @apply block text-xs font-bold uppercase tracking-wider
+      text-ink-500;
+  }
+
+  /* Blueprint-style grid used on the landing hero */
+  .hero-grid {
+    background-image:
+      linear-gradient(rgb(16 26 46 / 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(16 26 46 / 0.05) 1px, transparent 1px);
+    background-size: 36px 36px;
+  }
+
+  /* Soft acid glow behind key hero elements */
+  .glow-acid {
+    background: radial-gradient(
+      closest-side,
+      rgb(201 242 74 / 0.32),
+      transparent
+    );
+  }
+
+  /* Acid-tinted blueprint grid for dark surfaces */
+  .grid-dark {
+    background-image:
+      linear-gradient(rgb(201 242 74 / 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(201 242 74 / 0.07) 1px, transparent 1px);
+    background-size: 36px 36px;
+  }
+
+  /* Seamless right-to-left marquee (testimonial ticker) */
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 42s linear infinite;
+  }
+
+  .marquee-hover:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  .marquee-mask {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 6%,
+      black 94%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 6%,
+      black 94%,
+      transparent
+    );
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+    }
+  }
+}

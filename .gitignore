@@ -1,5 +1,8 @@
-node_moddules/
+node_modules/
 .env
 dist/
 build/
 .DS_store
+
+# Agent working notes — keep local, never commit
+docs/session-memory.md

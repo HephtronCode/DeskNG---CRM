@@ -13,7 +13,6 @@ through WhatsApp and email.
 ## Table of Contents
 
 - [Overview](#overview)
-- [Screenshots](#screenshots)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Repository Layout](#repository-layout)
@@ -44,39 +43,9 @@ The system enforces strict separation of concerns:
 routes -> middleware/validators -> controllers -> services -> models
 ```
 
----
-
-## Screenshots
-
-Captured from the live MVP (1280px wide, Chrome headless).
-
-**Landing page — hero with product preview and testimonial ticker**
-
-![Landing](docs/screenshots/landing.png)
-
-**Login — split-screen with quick-fill demo roles**
-
-![Login](docs/screenshots/login.png)
-
-**Register — with live password-rule checklist**
-
-![Register](docs/screenshots/register.png)
-
-**Operations Queue — KPI bar, filters, paginated SLA table**
-
-![Dashboard](docs/screenshots/dashboard.png)
-
-**Create ticket — category to subcategory with SLA preview**
-
-![Create ticket](docs/screenshots/create-ticket.png)
-
-**Ticket detail — conversation thread, transitions, assignment**
-
-![Ticket detail](docs/screenshots/ticket-detail.png)
-
-**Admin — category & SLA manager**
-
-![Admin categories](docs/screenshots/admin-categories.png)
+> Interface previews live in their own gallery:
+> **[SCREENSHOTS.md](SCREENSHOTS.md)** (12 views, including
+> customer-scoped and mobile layouts).
 
 ---
 
@@ -442,6 +411,8 @@ Authorization: Bearer <token>
 
 ## Docs
 
+- `SCREENSHOTS.md` — interface screenshots gallery
 - `docs/prd.md` — product requirements
 - `docs/spec.md` — technical specification & API contracts
 - `docs/session-memory.md` — agent working notes & checkpoint log
+  (gitignored; local only)
